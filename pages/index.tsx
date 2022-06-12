@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
-import GoogleChart from '../components/chart'
 import MyHead from '../components/head'
+import Main from '../components/main'
 import Image from 'next/image'
 
 
@@ -12,10 +12,7 @@ const Home: NextPage = () => {
   return (
     <div className={style.wrapper}>
       <MyHead />
-
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-          <GoogleChart />
-      </main>
+      <Main />
 
       <footer className="flex h-24 w-full items-center justify-center border-t">
         <a
