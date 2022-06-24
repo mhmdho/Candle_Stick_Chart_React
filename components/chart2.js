@@ -281,8 +281,8 @@ const options= {
       ],  
       xaxis: [
         {
-          x: 'Oct 06 14:00',
-          x2: 'Oct 06 19:00',
+          x: 1538780400000,
+          x2: 1538785800000,
           borderColor: '#00E396',
           fillColor: '#00FF99',
           label: {
@@ -298,8 +298,8 @@ const options= {
           }
         },
         {
-          x: 'Oct 06 19:00',
-          x2: 'Oct 07 01:00',
+          x: 1538785800000,
+          x2: 1538799800000,
           borderColor: 'red',
           fillColor: '#ff0030',
           label: {
@@ -315,8 +315,8 @@ const options= {
           }
         },
         {
-          x: 'Oct 07 01:00',
-          x2: 'Oct 07 07:00',
+          x: 1538799800000,
+          x2: 1538818800000,
           borderColor: 'yellow',
           fillColor: '#FFAA33',
           label: {
@@ -338,10 +338,11 @@ const options= {
     theme: 'dark',
   },
   xaxis: {
-    type: 'category',
-    labels: {
-      formatter: function(val) {
-        return dayjs(val).format('MMM DD HH:mm')
+      type: 'datetime',
+      labels: {
+        show: false,
+        formatter: function(val) {
+            return dayjs(val).format('MMM DD HH:mm')
       }
     }
   },
