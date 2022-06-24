@@ -260,6 +260,25 @@ const options= {
     align: 'left'
   },
   annotations: {
+    yaxis: [
+        {
+          y: 6606.00,
+          borderColor: 'gray',
+          fillColor: 'gray',
+          label: {
+            borderColor: 'gray',
+            style: {
+              fontSize: '12px',
+              color: '#fff',
+              background: 'black'
+            },
+            orientation: 'vertical',
+            offsetY: 0,
+            offsetX: 60,
+            text: '6606.00'
+          }
+        },
+      ],  
     xaxis: [
         {
         x: 'Oct 06 14:00',
@@ -291,6 +310,7 @@ const options= {
     }
   },
   yaxis: {
+    opposite: true,
     tooltip: {
       enabled: true
     }
@@ -316,8 +336,8 @@ class ApexChart extends Component {
 };
 
 
-const domContainer = document.querySelector('#App');
-ReactDOM.render(React.createElement(ApexChart), domContainer);
+// const domContainer = document.querySelector('#App');
+// ReactDOM.render(React.createElement(ApexChart), domContainer);
 
 
 export default ApexChart;
