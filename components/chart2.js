@@ -279,24 +279,60 @@ const options= {
           }
         },
       ],  
-    xaxis: [
+      xaxis: [
         {
-        x: 'Oct 06 14:00',
-        borderColor: '#00E396',
-        label: {
+          x: 'Oct 06 14:00',
+          x2: 'Oct 06 19:00',
+          borderColor: '#00E396',
+          fillColor: '#00FF99',
+          label: {
             borderColor: '#00E396',
             style: {
-                fontSize: '12px',
-                color: '#fff',
-                background: '#00E396'
+              fontSize: '12px',
+              color: '#fff',
+              background: '#00E396'
             },
-            orientation: 'horizontal',
+            orientation: 'vertical',
             offsetY: 7,
-            text: 'Annotation Test'
-            }
+            text: '---UpTrend---'
+          }
+        },
+        {
+          x: 'Oct 06 19:00',
+          x2: 'Oct 07 01:00',
+          borderColor: 'red',
+          fillColor: '#ff0030',
+          label: {
+            borderColor: 'red',
+            style: {
+              fontSize: '12px',
+              color: '#fff',
+              background: 'red'
+            },
+            orientation: 'vertical',
+            offsetY: 7,
+            text: '--DownTrend--'
+          }
+        },
+        {
+          x: 'Oct 07 01:00',
+          x2: 'Oct 07 07:00',
+          borderColor: 'yellow',
+          fillColor: '#FFAA33',
+          label: {
+            borderColor: 'yellow',
+            style: {
+              fontSize: '12px',
+              color: '#fff',
+              background: '#FFAA33'
+            },
+            orientation: 'vertical',
+            offsetY: 7,
+            text: '--- Range ---'
+          }
         }
-    ]
-  },
+      ]
+    },  
   tooltip: { 
     enabled: true,
     theme: 'dark',
