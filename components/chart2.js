@@ -259,9 +259,10 @@ const options= {
     //     autoSelected: 'pan',
     //     show: true
     //   },
-    //   zoom: {
-    //     enabled: true
-    //   },
+      zoom: {
+        enabled: true,
+        type: 'xy',
+      },
   },
   title: {
     text: 'CandleStick Chart - Category X-axis',
