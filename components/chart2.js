@@ -332,6 +332,7 @@ const options= {
     yaxis: [
         {
           y: 6606.00,
+          strokeDashArray: 3,
           borderColor: 'gray',
           fillColor: 'gray',
           label: {
@@ -342,12 +343,31 @@ const options= {
               background: 'black'
             },
             orientation: 'vertical',
-            offsetY: 0,
+            offsetY: 5,
             offsetX: 60,
             text: '6606.00'
           }
         },
-      ],  
+        {
+          y: 6646.00,
+          strokeDashArray: 0,
+          borderColor: 'purple',
+          fillColor: 'purple',
+          dashArray: 0,
+          label: {
+            borderColor: 'purple',
+            style: {
+              fontSize: '12px',
+              color: '#fff',
+              background: 'purple',
+            },
+            orientation: 'vertical',
+            offsetY: 5,
+            offsetX: 60,
+            text: '6646.00'
+          }
+        },
+      ],
       xaxis: [
         {
           x: 1538780400000,
