@@ -380,11 +380,15 @@ const options= {
             style: {
               fontSize: '12px',
               color: '#fff',
-              background: '#00E396'
+              background: '#00E396',
+              padding:{
+                left:12,
+                right:12,
+              }
             },
             orientation: 'vertical',
             offsetY: 7,
-            text: '---UpTrend---'
+            text: 'UpTrend'
           }
         },
         {
@@ -401,8 +405,8 @@ const options= {
               background: 'red'
             },
             orientation: 'vertical',
-            offsetY: 7,
-            text: '--DownTrend--'
+            offsetY: 0,
+            text: 'DownTrend'
           }
         },
         {
@@ -417,10 +421,14 @@ const options= {
               fontSize: '12px',
               color: '#fff',
               background: '#FFAA33',
+              padding:{
+                left:18,
+                right:18,
+              }
             },
             orientation: 'vertical',
-            offsetY: 7,
-            text: '--- Range ---'
+            offsetY: 12.5,
+            text: 'Range'
           }
         }
       ]
