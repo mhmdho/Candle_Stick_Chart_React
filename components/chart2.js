@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 
 const series = [{
   name: 'candle',
+  type: 'candlestick',
   data: [
     {
       x: new Date(1538778600000),
@@ -247,7 +248,34 @@ const series = [{
       y: [6604.98, 6606, 6604.07, 6606]
     },
   ]
-}];
+  },
+  {
+    name: 'positions',
+    type: 'line',
+    color: 'lightgreen',
+    data: [
+      {
+        x: new Date(1538791200000),
+        y: [6584.22],
+      },
+      {
+        x: new Date(1538802000000),
+        y: [6614.12]
+      },
+      {
+        x: new Date(0),
+        y: null
+      },
+      {
+        x: new Date(1538829000000),
+        y: [6598.89]
+      },
+      {
+        x: new Date(1538832600000),
+        y: [6567.39]
+      },
+    ]},
+];
 
 
 const options= {
