@@ -292,6 +292,38 @@ const options= {
         type: 'xy',
       },
   },
+  fill: {
+    opacity: 1,
+    type: ['solid', 'gradient'],
+    gradient:{
+      opacityFrom: [0.8, 0.3],
+      opacityTo: [1, 0.4],
+    }
+  },
+  stroke: {
+    curve: 'straight',
+    width: [1, 3],
+    dashArray: [0, 8],
+    lineCap: 'square'
+  },
+  dataLabels:{
+    enabled: true,
+    enabledOnSeries: [1],
+    formatter: function (val, opts) {
+      return '(' + val + ')'
+    },
+    textAnchor: 'end',
+    background: {
+      enabled: true,
+      opacity: 0.7,
+    },
+    dropShadow: {
+      enabled: true,
+      left: 0,
+      top: 0,
+      opacity: 0.1
+    },
+  },
   title: {
     text: 'CandleStick Chart - Category X-axis',
     align: 'left'
