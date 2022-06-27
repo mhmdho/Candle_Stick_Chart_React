@@ -275,6 +275,40 @@ const series = [{
         y: [6567.39]
       },
     ]},
+  {
+  name: 'high',
+  type: 'scatter',
+  data: [
+    {
+      x: new Date(1538820000000),
+      y: [6634.15]
+    },
+    {
+      x: new Date(1538847000000),
+      y: [6607]
+    },
+    {
+      x: new Date(1538863200000),
+      y: [6606]
+    },
+  ]},
+  {
+    name: 'low',
+    type: 'scatter',
+    data: [
+      {
+        x: new Date(1538834400000),
+        y: [6566.77]
+      },
+      {
+        x: new Date(1538868600000),
+        y: [6587.6]
+      },
+      {
+        x: new Date(1538877600000),
+        y: [6599.09]
+      },
+    ]}
 ];
 
 
@@ -436,6 +470,8 @@ const options= {
   tooltip: { 
     enabled: true,
     theme: 'dark',
+    shared: false,
+    intersect: true,
   },
   xaxis: {
       type: 'datetime',
@@ -451,7 +487,15 @@ const options= {
     tooltip: {
       enabled: true
     }
-  }
+  },
+  markers: {
+    size: 8,
+    strokeWidth: 0,
+    fillOpacity: 0.6,
+    shape: 'square',
+    radius: 0,
+    showNullDataPoints: false,
+  },
 };
 
 
