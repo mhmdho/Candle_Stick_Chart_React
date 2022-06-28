@@ -489,11 +489,10 @@ const options= {
     }
   },
   markers: {
-    size: 8,
+    size: [8, 1, 8],
     strokeWidth: 0,
     fillOpacity: 0.6,
-    shape: 'square',
-    radius: 0,
+    shape: 'circle',
     showNullDataPoints: false,
   },
 };
