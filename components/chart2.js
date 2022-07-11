@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactApexChart from "react-apexcharts";
 import dayjs from "dayjs";
 import candlestickData from "./candledata";
+import {lowPointsData, highPointsData} from "./pointsdata";
 
 
 const positionData = [
@@ -24,38 +25,6 @@ const positionData = [
       {
         x: new Date(1538832600000),
         y: [6567.39]
-      },
-]
-
-
-const highData = [
-    {
-      x: new Date(1538820000000),
-      y: [6634.15]
-    },
-    {
-      x: new Date(1538847000000),
-      y: [6607]
-    },
-    {
-      x: new Date(1538863200000),
-      y: [6606]
-    },
-]
-
-
-const lowData = [
-      {
-        x: new Date(1538834400000),
-        y: [6566.77]
-      },
-      {
-        x: new Date(1538868600000),
-        y: [6587.6]
-      },
-      {
-        x: new Date(1538877600000),
-        y: [6599.09]
       },
 ]
 
@@ -194,11 +163,11 @@ const options= {
         {
           x: 1538799800000,
           x2: 1538818800000,
-          borderColor: 'yellow',
+          borderColor: '#FFAA33',
           fillColor: '#FFAA33',
           opacity: 0.06,
           label: {
-            borderColor: 'yellow',
+            borderColor: '#FFAA33',
             style: {
               fontSize: '12px',
               color: '#fff',
@@ -564,6 +533,8 @@ class ApexChart extends Component {
 
     async componentDidMount() {
       const candleData = await candlestickData();
+      const lowData = await lowPointsData();
+      const highData = await highPointsData();
       const Series = [
         {
           name: 'candle',
@@ -577,15 +548,15 @@ class ApexChart extends Component {
           data: positionData
         },
         {
+          name: 'low',
+          type: 'scatter',
+          data: lowData
+        },
+        {
           name: 'high',
           type: 'scatter',
           data: highData
         },
-        {
-          name: 'low',
-          type: 'scatter',
-          data: lowData
-        }
       ]
       this.setState({series: Series})
     }
