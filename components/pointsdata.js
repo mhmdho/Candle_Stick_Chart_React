@@ -5,7 +5,7 @@ const URL_low ="http://127.0.0.1:8000/lowpointsdata/?format=json"
 const URL_high ="http://127.0.0.1:8000/highpointsdata/?format=json"
 
 
-function LowDataFormat(data) {
+function LowPointsDataFormat(data) {
     return (
       data.map(element => (
           {
@@ -16,13 +16,13 @@ function LowDataFormat(data) {
       ))
   }
 
-async function lowData() {
+async function lowPointsData() {
     const response = await axios.get(URL_low);
-    return LowDataFormat(response.data)
+    return LowPointsDataFormat(response.data)
   }
 
 
-function HighDataFormat(data) {
+function HighPointsDataFormat(data) {
     return (
       data.map(element => (
           {
@@ -33,10 +33,10 @@ function HighDataFormat(data) {
       ))
   }
 
-async function highData() {
+async function highPointsData() {
     const response = await axios.get(URL_high);
-    return HighDataFormat(response.data)
+    return HighPointsDataFormat(response.data)
   }
 
 
-export {lowData, highData};
+export {lowPointsData, highPointsData};
