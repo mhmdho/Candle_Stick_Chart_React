@@ -3,33 +3,34 @@ import ReactApexChart from "react-apexcharts";
 import dayjs from "dayjs";
 import candlestickData from "./candledata";
 import {lowPointsData, highPointsData} from "./pointsdata";
+import trendData from "./trenddata";
 
 
-const positionData = [
-      {
-        x: new Date(1538791200000),
-        y: [6584.22],
-      },
-      {
-        x: new Date(1538802000000),
-        y: [6614.12]
-      },
-      {
-        x: new Date(0),
-        y: null
-      },
-      {
-        x: new Date(1538829000000),
-        y: [6598.89]
-      },
-      {
-        x: new Date(1538832600000),
-        y: [6567.39]
-      },
-]
+const positionData = []
+//       {
+//         x: new Date(1538791200000),
+//         y: [6584.22],
+//       },
+//       {
+//         x: new Date(1538802000000),
+//         y: [6614.12]
+//       },
+//       {
+//         x: new Date(0),
+//         y: null
+//       },
+//       {
+//         x: new Date(1538829000000),
+//         y: [6598.89]
+//       },
+//       {
+//         x: new Date(1538832600000),
+//         y: [6567.39]
+//       },
+// ]
 
 
-const options= {
+const myOptions= {
   chart: {
       height: 350,
       type: 'candlestick',
@@ -119,70 +120,7 @@ const options= {
           }
         },
       ],
-      xaxis: [
-        {
-          x: 1538780400000,
-          x2: 1538785800000,
-          borderColor: '#00E396',
-          fillColor: '#00FF99',
-          opacity: 0.06,
-          label: {
-            borderColor: '#00E396',
-            style: {
-              fontSize: '12px',
-              color: '#fff',
-              background: '#00E396',
-              padding:{
-                left:12,
-                right:12,
-              }
-            },
-            orientation: 'vertical',
-            offsetY: 7,
-            text: 'UpTrend'
-          }
-        },
-        {
-          x: 1538785800000,
-          x2: 1538799800000,
-          borderColor: 'red',
-          fillColor: '#ff0030',
-          opacity: 0.06,
-          label: {
-            borderColor: 'red',
-            style: {
-              fontSize: '12px',
-              color: '#fff',
-              background: 'red'
-            },
-            orientation: 'vertical',
-            offsetY: 0,
-            text: 'DownTrend'
-          }
-        },
-        {
-          x: 1538799800000,
-          x2: 1538818800000,
-          borderColor: '#FFAA33',
-          fillColor: '#FFAA33',
-          opacity: 0.06,
-          label: {
-            borderColor: '#FFAA33',
-            style: {
-              fontSize: '12px',
-              color: '#fff',
-              background: '#FFAA33',
-              padding:{
-                left:18,
-                right:18,
-              }
-            },
-            orientation: 'vertical',
-            offsetY: 12.5,
-            text: 'Range'
-          }
-        }
-      ]
+    xaxis: []
     },  
   tooltip: { 
     enabled: true,
@@ -528,6 +466,7 @@ class ApexChart extends Component {
         super(props);
         this.state = {
           series: [],
+          options: myOptions,
         }
     }
 
@@ -535,6 +474,7 @@ class ApexChart extends Component {
       const candleData = await candlestickData();
       const lowData = await lowPointsData();
       const highData = await highPointsData();
+      const trendsData = await trendData();
       const Series = [
         {
           name: 'candle',
@@ -557,8 +497,14 @@ class ApexChart extends Component {
           type: 'scatter',
           data: highData
         },
-      ]
-      this.setState({series: Series})
+      ];
+      const Options = {
+        annotations: {
+          xaxis: trendsData
+        },  
+
+      };
+      this.setState({series: Series, options: Options})
     }
 
     render() {
@@ -566,7 +512,7 @@ class ApexChart extends Component {
             <div className="chart-box">
                 <div id="chart-candlestick">
                     <ReactApexChart
-                        options={options}
+                        options={this.state.options}
                         series={this.state.series}
                         type="candlestick"
                         height={'290%'}
