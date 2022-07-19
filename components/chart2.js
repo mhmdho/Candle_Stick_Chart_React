@@ -437,7 +437,7 @@ class ApexChart extends Component {
       const lowData = await lowPointsData();
       const highData = await highPointsData();
       const trendsData = await trendData();
-      const lastPrice = (candleData[0]).y[3]
+      const lastPrice = (candleData[candleData.length-1]).y[3]
       const Series = [
         {
           name: 'candle',
@@ -503,7 +503,7 @@ class ApexChart extends Component {
               }
             },
           ],
-        },  
+        },
 
       };
       this.setState({series: Series, options: Options})
@@ -517,7 +517,7 @@ class ApexChart extends Component {
                         options={this.state.options}
                         series={this.state.series}
                         type="candlestick"
-                        height={'290%'}
+                        height={'490%'}
                         width={'100%'}
                     />
                 </div>
