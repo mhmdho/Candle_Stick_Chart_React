@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactApexChart from "react-apexcharts";
 import dayjs from "dayjs";
 import candlestickData from "./candledata";
-import {lowPointsData, highPointsData} from "./pointsdata";
+import {lowPointsData, highPointsData, lowPointsDataAux, highPointsDataAux} from "./pointsdata";
 import trendData from "./trenddata";
 
 
@@ -437,6 +437,8 @@ class ApexChart extends Component {
       const lowData = await lowPointsData();
       const highData = await highPointsData();
       const trendsData = await trendData();
+      const lowDataAux = await lowPointsDataAux();
+      const highDataAux = await highPointsDataAux();
       const lastPrice = (candleData[candleData.length-1]).y[3]
       const Series = [
         {
@@ -459,6 +461,16 @@ class ApexChart extends Component {
           name: 'high',
           type: 'scatter',
           data: highData
+        },
+        {
+          name: 'lowAux',
+          type: 'scatter',
+          data: lowDataAux
+        },
+        {
+          name: 'highAux',
+          type: 'scatter',
+          data: highDataAux
         },
       ];
       const Options = {
