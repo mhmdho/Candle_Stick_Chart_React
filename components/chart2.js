@@ -3,6 +3,7 @@ import ReactApexChart from "react-apexcharts";
 import dayjs from "dayjs";
 import candlestickData from "./candledata";
 import {lowPointsData, highPointsData, lowPointsDataAux, highPointsDataAux} from "./pointsdata";
+import {channelUpData, channelDownData} from "./channeldata";
 import trendData from "./trenddata";
 
 
@@ -439,7 +440,9 @@ class ApexChart extends Component {
       const trendsData = await trendData();
       const lowDataAux = await lowPointsDataAux();
       const highDataAux = await highPointsDataAux();
-      const lastPrice = (candleData[candleData.length-1]).y[3]
+      const channelUpLine = await channelUpData();
+      const channelDownLine = await channelDownData();
+      const lastPrice = (candleData[candleData.length-1]).y[3];
       const Series = [
         {
           name: 'candle',
@@ -451,6 +454,18 @@ class ApexChart extends Component {
           type: 'line',
           color: 'lightgreen',
           data: positionData
+        },
+        {
+          name: 'upline',
+          type: 'line',
+          color: 'lightgreen',
+          data: channelUpLine
+        },
+        {
+          name: 'downline',
+          type: 'line',
+          color: 'lightgreen',
+          data: channelDownLine
         },
         {
           name: 'low',
