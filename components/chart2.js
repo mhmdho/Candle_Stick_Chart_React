@@ -107,7 +107,7 @@ const myOptions= {
     }
   },
   markers: {
-    size: [8, 1, 8],
+    size: [8, 1, 2, 2],
     strokeWidth: 0,
     fillOpacity: 0.6,
     shape: 'circle',
