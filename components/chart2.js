@@ -442,7 +442,7 @@ class ApexChart extends Component {
       const highDataAux = await highPointsDataAux();
       const channelUpLine = await channelUpData();
       const channelDownLine = await channelDownData();
-      const lastPrice = (candleData[candleData.length-1]).y[3];
+      const lastPrice = parseFloat((candleData[candleData.length-1]).y[3]);
       const Series = [
         {
           name: 'candle',
@@ -507,7 +507,7 @@ class ApexChart extends Component {
                 orientation: 'vertical',
                 offsetY: 5,
                 offsetX: 60,
-                text: lastPrice.toString()
+                text: lastPrice
               }
             },
             {
