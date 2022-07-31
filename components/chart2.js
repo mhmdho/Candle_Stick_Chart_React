@@ -445,6 +445,25 @@ class ApexChart extends Component {
       const channelDownLine = await channelDownData();
       const lines = await linesData();
       const lastPrice = parseFloat((candleData[candleData.length-1]).y[3]);
+      const lastPriceArray = {
+              y: lastPrice,
+              strokeDashArray: 3,
+              borderColor: 'gray',
+              fillColor: 'gray',
+              label: {
+                borderColor: 'gray',
+                style: {
+                  fontSize: '12px',
+                  color: '#fff',
+                  background: 'black'
+                },
+                orientation: 'vertical',
+                offsetY: 5,
+                offsetX: 60,
+                text: lastPrice
+              }
+            }
+      lines.push(lastPriceArray)
       const Series = [
         {
           name: 'candle',
@@ -494,28 +513,7 @@ class ApexChart extends Component {
         annotations: {
           xaxis: trendsData,
           yaxis: lines, 
-          // [
-          //   {
-          //     y: lastPrice,
-          //     strokeDashArray: 3,
-          //     borderColor: 'gray',
-          //     fillColor: 'gray',
-          //     label: {
-          //       borderColor: 'gray',
-          //       style: {
-          //         fontSize: '12px',
-          //         color: '#fff',
-          //         background: 'black'
-          //       },
-          //       orientation: 'vertical',
-          //       offsetY: 5,
-          //       offsetX: 60,
-          //       text: lastPrice
-          //     }
-          //   },
-          // ]
         },
-
       };
       this.setState({series: Series, options: Options})
     }
