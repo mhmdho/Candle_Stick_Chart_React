@@ -5,6 +5,7 @@ import candlestickData from "./candledata";
 import {lowPointsData, highPointsData, lowPointsDataAux, highPointsDataAux} from "./pointsdata";
 import {channelUpData, channelDownData} from "./channeldata";
 import trendData from "./trenddata";
+import linesData from "./linesdata";
 
 
 const positionData = []
@@ -442,6 +443,7 @@ class ApexChart extends Component {
       const highDataAux = await highPointsDataAux();
       const channelUpLine = await channelUpData();
       const channelDownLine = await channelDownData();
+      const lines = await linesData();
       const lastPrice = parseFloat((candleData[candleData.length-1]).y[3]);
       const Series = [
         {
@@ -491,45 +493,27 @@ class ApexChart extends Component {
       const Options = {
         annotations: {
           xaxis: trendsData,
-          yaxis: [
-            {
-              y: lastPrice,
-              strokeDashArray: 3,
-              borderColor: 'gray',
-              fillColor: 'gray',
-              label: {
-                borderColor: 'gray',
-                style: {
-                  fontSize: '12px',
-                  color: '#fff',
-                  background: 'black'
-                },
-                orientation: 'vertical',
-                offsetY: 5,
-                offsetX: 60,
-                text: lastPrice
-              }
-            },
-            {
-              y: 21646.00,
-              strokeDashArray: 0,
-              borderColor: 'purple',
-              fillColor: 'purple',
-              dashArray: 0,
-              label: {
-                borderColor: 'purple',
-                style: {
-                  fontSize: '12px',
-                  color: '#fff',
-                  background: 'purple',
-                },
-                orientation: 'vertical',
-                offsetY: 5,
-                offsetX: 60,
-                text: '6646.00'
-              }
-            },
-          ],
+          yaxis: lines, 
+          // [
+          //   {
+          //     y: lastPrice,
+          //     strokeDashArray: 3,
+          //     borderColor: 'gray',
+          //     fillColor: 'gray',
+          //     label: {
+          //       borderColor: 'gray',
+          //       style: {
+          //         fontSize: '12px',
+          //         color: '#fff',
+          //         background: 'black'
+          //       },
+          //       orientation: 'vertical',
+          //       offsetY: 5,
+          //       offsetX: 60,
+          //       text: lastPrice
+          //     }
+          //   },
+          // ]
         },
 
       };
