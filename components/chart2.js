@@ -519,28 +519,25 @@ class ApexChart extends Component {
     }
 
     render() {
-        return (
-            <div className="chart-box">
-                <div id="chart-candlestick">
-                    <ReactApexChart
-                        options={this.state.options}
-                        series={this.state.series}
-                        type="candlestick"
-                        height={'490%'}
-                        width={'100%'}
-                    />
-                </div>
-                <div id="chart-bar">
-                <ReactApexChart
-                        options={optionsIndicator}
-                        series={seriesIndicator}
-                        type="area"
-                        height={'100%'}
-                        width={'100%'}
-                    />
-                </div>
-            </div>
-        );
+      return (
+        <>
+          <ReactApexChart
+            options={this.state.options}
+            series={this.state.series}
+            type="candlestick"
+            height={'85%'}
+            width={'100%'}
+          />
+
+          <ReactApexChart
+            options={optionsIndicator}
+            series={seriesIndicator}
+            type="area"
+            height={'15%'}
+            width={'100%'}
+          />
+        </>
+      );
     }
 };
 
