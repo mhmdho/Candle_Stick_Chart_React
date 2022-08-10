@@ -9,22 +9,24 @@ function fiboDataFormat(data) {
       data.map(element => (
         {
           y: element.fibo,
-          x: 1660082400000,
-          strokeDashArray: 0,
+          strokeDashArray: 8,
           borderColor: 'orange',
           fillColor: 'orange',
-          dashArray: 0,
+          opacity: 0.2,
+          offsetX: 1500,
+          width: '59%',
           label: {
             borderColor: 'orange',
-            style: {
-              fontSize: '10px',
-              color: '#fff',
-              background: 'orange',
-            },
+            borderRadius: 5,
             orientation: 'vertical',
             offsetY: 5,
-            offsetX: 100,
-            text: parseFloat(element.fibo)
+            offsetX: 90,
+            text: parseFloat(element.fibo),
+            style: {
+              fontSize: '10px',
+              color: 'black',
+              background: 'orange',
+            },
           },
         }
         )
