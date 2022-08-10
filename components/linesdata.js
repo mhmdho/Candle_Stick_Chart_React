@@ -22,8 +22,8 @@ function linesDataFormat(data) {
             },
             orientation: 'vertical',
             offsetY: 5,
-            offsetX: 120,
-            text: (parseFloat(element.point).toString()).concat("--", element.rank)
+            offsetX: 100,
+            text: (parseFloat(element.point).toString()).concat("/", element.rank)
           },
         }
         )

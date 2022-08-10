@@ -6,6 +6,7 @@ import {lowPointsData, highPointsData, lowPointsDataAux, highPointsDataAux} from
 import {channelUpData, channelDownData} from "./channeldata";
 import trendData from "./trenddata";
 import linesData from "./linesdata";
+import fiboData from "./fibodata";
 
 
 const positionData = []
@@ -444,6 +445,7 @@ class ApexChart extends Component {
       const channelUpLine = await channelUpData();
       const channelDownLine = await channelDownData();
       const lines = await linesData();
+      const fibo = await fiboData();
       const lastPrice = parseFloat((candleData[candleData.length-1]).y[3]);
       const lastPriceArray = {
               y: lastPrice,
@@ -464,6 +466,8 @@ class ApexChart extends Component {
               }
             }
       lines.push(lastPriceArray)
+      const linesfibo = lines.concat(fibo)
+      // fibo.map(element => (lines.push(element)))
       const Series = [
         {
           name: 'candle',
@@ -512,7 +516,7 @@ class ApexChart extends Component {
       const Options = {
         annotations: {
           xaxis: trendsData,
-          yaxis: lines, 
+          yaxis: linesfibo, 
         },
       };
       this.setState({series: Series, options: Options})
