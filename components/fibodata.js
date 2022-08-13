@@ -9,19 +9,19 @@ function fiboDataFormat(data) {
       data.map(element => (
         {
           y: element.fibo,
-          strokeDashArray: 8,
+          strokeDashArray: 10,
           borderColor: 'orange',
           fillColor: 'orange',
           opacity: 0.2,
-          offsetX: 1500,
-          width: '59%',
+          offsetX: '50%',
+          width: '6%',
           label: {
             borderColor: 'orange',
             borderRadius: 5,
             orientation: 'vertical',
             offsetY: 5,
             offsetX: 90,
-            text: parseFloat(element.fibo),
+            text: "[".concat(element.label).concat("] ", (parseFloat(element.fibo).toString())),
             style: {
               fontSize: '10px',
               color: 'black',
