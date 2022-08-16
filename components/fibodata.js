@@ -10,14 +10,14 @@ function fiboDataFormat(data) {
         element.label == '0.00' || element.label == '1.00' ? 
         {
           y: element.fibo,
-          strokeDashArray: 7,
-          borderColor: 'gray',
-          fillColor: 'gray',
+          strokeDashArray: 6,
+          borderColor: '#bb4f00',
+          fillColor: '#bb4f00',
           opacity: 0.2,
           offsetX: '50%',
           width: '6%',
           label: {
-            borderColor: 'red',
+            borderColor: '#bb4f00',
             borderRadius: 5,
             orientation: 'vertical',
             offsetY: 5,
@@ -25,14 +25,14 @@ function fiboDataFormat(data) {
             text: "[".concat(element.label).concat("] ", (parseFloat(element.fibo).toString())),
             style: {
               fontSize: '10px',
-              color: 'black',
-              background: 'gray',
+              color: '#fff',
+              background: '#bb4f00',
             },
           }
         } :
         {
           y: element.fibo,
-          strokeDashArray: 10,
+          strokeDashArray: 12,
           borderColor: 'orange',
           fillColor: 'orange',
           opacity: 0.2,
