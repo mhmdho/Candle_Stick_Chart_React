@@ -106,7 +106,10 @@ const myOptions= {
     opposite: true,
     tooltip: {
       enabled: true
-    }
+    },
+    labels: {
+      minWidth: 200,
+    },
   },
   markers: {
     size: [8, 1, 2, 2],
