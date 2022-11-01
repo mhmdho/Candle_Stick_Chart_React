@@ -10,7 +10,7 @@ function trendDataFormat(data) {
         {
           x: element.start,
           x2: element.end,
-          borderColor: element.color,
+          borderColor: 'white',
           fillColor: element.color,
           opacity: 0.06,
           label: {
