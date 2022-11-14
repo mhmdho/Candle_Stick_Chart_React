@@ -7,30 +7,7 @@ import {channelUpData, channelDownData} from "./channeldata";
 import trendData from "./trenddata";
 import linesData from "./linesdata";
 import fiboData from "./fibodata";
-
-
-const positionData = []
-//       {
-//         x: new Date(1538791200000),
-//         y: [6584.22],
-//       },
-//       {
-//         x: new Date(1538802000000),
-//         y: [6614.12]
-//       },
-//       {
-//         x: new Date(0),
-//         y: null
-//       },
-//       {
-//         x: new Date(1538829000000),
-//         y: [6598.89]
-//       },
-//       {
-//         x: new Date(1538832600000),
-//         y: [6567.39]
-//       },
-// ]
+import positionsData from "./positionsdata";
 
 
 const myOptions= {
@@ -449,6 +426,7 @@ class ApexChart extends Component {
       const channelDownLine = await channelDownData();
       const lines = await linesData();
       const fibo = await fiboData();
+      const positions = await positionsData()
       const lastPrice = parseFloat((candleData[candleData.length-1]).y[3]);
       const lastPriceArray = {
               y: lastPrice,
@@ -481,7 +459,7 @@ class ApexChart extends Component {
           name: 'positions',
           type: 'line',
           color: 'lightgreen',
-          data: positionData
+          data: positions
         },
         {
           name: 'upline',
