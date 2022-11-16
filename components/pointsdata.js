@@ -1,10 +1,10 @@
 import axios from "axios"
 
 
-const URL_low ="http://127.0.0.1:8000/lowpointsdata/?format=json"
-const URL_high ="http://127.0.0.1:8000/highpointsdata/?format=json"
-const URL_low_a ="http://127.0.0.1:8000/lowpointsdataaux/?format=json"
-const URL_high_a ="http://127.0.0.1:8000/highpointsdataaux/?format=json"
+const URL_low = process.env.NEXT_PUBLIC_HOST + "/lowpointsdata/?format=json"
+const URL_high = process.env.NEXT_PUBLIC_HOST + "/highpointsdata/?format=json"
+const URL_low_a = process.env.NEXT_PUBLIC_HOST + "/lowpointsdataaux/?format=json"
+const URL_high_a = process.env.NEXT_PUBLIC_HOST + "/highpointsdataaux/?format=json"
 
 
 function LowPointsDataFormat(data) {

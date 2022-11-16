@@ -1,8 +1,8 @@
 import axios from "axios"
 
 
-const URL_Downline ="http://127.0.0.1:8000/channeldowndata/?format=json"
-const URL_Upline ="http://127.0.0.1:8000/channelupdata/?format=json"
+const URL_Downline = process.env.NEXT_PUBLIC_HOST + "/channeldowndata/?format=json"
+const URL_Upline = process.env.NEXT_PUBLIC_HOST + "/channelupdata/?format=json"
 
 
 function ChannelDataFormat(data) {

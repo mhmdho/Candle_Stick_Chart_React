@@ -1,7 +1,7 @@
 import axios from "axios"
 
 
-const URL ="http://127.0.0.1:8000/positionsdata/?format=json"
+const URL = process.env.NEXT_PUBLIC_HOST + "/positionsdata/?format=json"
 
 
 function positionsDataFormat(data) {

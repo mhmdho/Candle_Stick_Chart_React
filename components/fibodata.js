@@ -1,7 +1,7 @@
 import axios from "axios"
 
 
-const URL ="http://127.0.0.1:8000/fibodata/?format=json"
+const URL = process.env.NEXT_PUBLIC_HOST + "/fibodata/?format=json"
 
 
 function fiboDataFormat(data) {
