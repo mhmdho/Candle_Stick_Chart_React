@@ -1,7 +1,7 @@
 import axios from "axios"
 
 
-const URL = process.env.NEXT_PUBLIC_HOST + "/indexdata/?format=json"
+const URL = process.env.NEXT_PUBLIC_HOST + "/candlesdata/?format=json"
 
 
 function CandlestickDataFormat(data) {
