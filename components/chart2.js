@@ -497,7 +497,7 @@ class ApexChart extends Component {
       const Options = {
         annotations: {
           xaxis: trendsData,
-          yaxis: lines, 
+          yaxis: linesfibo, 
         },
       };
       this.setState({series: Series, options: Options})
